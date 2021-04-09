@@ -1,7 +1,8 @@
 package com.susimsek.web.controller.rest;
 
 
-import com.susimsek.web.model.MessageDto;
+import com.susimsek.web.domain.Message;
+import com.susimsek.web.repository.MessageRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
@@ -18,12 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class MessageController {
 
+    final MessageRepository messageRepository;
 
-    @GetMapping(value = "/message")
+    @GetMapping(value = "/messages")
     @ResponseStatus(HttpStatus.OK)
-    public MessageDto getMessage(){
-        return MessageDto.builder()
-                .message("Hello world!!!")
-                .build();
+    public List<Message> getMessage(){
+        return messageRepository.findAll();
     }
 }

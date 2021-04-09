@@ -71,6 +71,8 @@ docker-compose up -d
 * Spring Boot 2.4.4
 * Spring Native
 * Spring Boot Web
+* Spring Boot Jpa
+* H2  
 * Spring Boot Actuator  
 * Lombok
 * Spring Boot Test
