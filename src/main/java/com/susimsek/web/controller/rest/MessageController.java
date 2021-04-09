@@ -1,7 +1,7 @@
-package com.example.web.controller.rest;
+package com.susimsek.web.controller.rest;
 
 
-import com.example.web.model.MessageDto;
+import com.susimsek.web.model.MessageDto;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -23,7 +23,7 @@ public class MessageController {
     @ResponseStatus(HttpStatus.OK)
     public MessageDto getMessage(){
         return MessageDto.builder()
-                .message("Hello!!!")
+                .message("Hello world!!!")
                 .build();
     }
 }

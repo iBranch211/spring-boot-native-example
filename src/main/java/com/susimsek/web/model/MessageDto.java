@@ -1,4 +1,4 @@
-package com.example.web.model;
+package com.susimsek.web.model;
 
 
 import lombok.*;
